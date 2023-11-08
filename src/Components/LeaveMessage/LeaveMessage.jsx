@@ -4,7 +4,7 @@ const Leavemessage = () => {
   return (
     <section className="leave-message">
     <div className="container">
-        <a href="#" className="box1">
+        <a href="#" className="contact-boxes">
             <div className="rund-ruta">
                 <div className="icon"><i className="fa-solid fa-location-dot"></i></div>
             </div>
@@ -14,7 +14,7 @@ const Leavemessage = () => {
                 <p>111 34 STOCKHOLM</p>
             </div>
         </a>
-        <a href="#" className="box1">
+        <a href="#" className="contact-boxes">
             <div className="rund-ruta">
                 <div className="icon"><i className="fa-solid fa-phone"></i></div>
             </div>
@@ -24,7 +24,7 @@ const Leavemessage = () => {
                 <p>+46 (8) 121 470 51</p>
             </div>
         </a>
-        <a href="#" className="box1">
+        <a href="#" className="contact-boxes">
             <div className="rund-ruta">
                 <div className="icon"><i className="fa-sharp fa-solid fa-envelope"></i></div>
             </div>

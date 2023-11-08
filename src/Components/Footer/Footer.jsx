@@ -1,5 +1,6 @@
 import React from 'react'
 import img_right_lines from '../../assets/images/background-lines-right - Copy.svg'
+import img_logo from '../../assets/Images/Logo (3).svg'
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
             <div className="container">
                 <div className="flex-content">
                     <div className="logo-content">
-                        <img src="images/Logo (3).svg" alt=""/>
+                        <img src={img_logo} alt=""/>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati voluptas voluptates! Voluptates laborum nam ratione minus necessitatibus, iure praesentium.</p>
                     </div>
                     <div className="links-content company">

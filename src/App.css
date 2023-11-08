@@ -1688,7 +1688,7 @@ footer .copyright-content .container .copyright .socialmedia-bar a:hover {
     display: flex;
   }
 }
-.leave-message .container .box1 {
+.leave-message .container .contact-boxes {
   transition: background-color 0.6s;
   color: #191919;
   text-decoration: none;
@@ -1698,22 +1698,22 @@ footer .copyright-content .container .copyright .socialmedia-bar a:hover {
   justify-content: center;
   margin: 20px;
 }
-.leave-message .container .box1 p {
+.leave-message .container .contact-boxes p {
   font-size: 0.9rem;
 }
-.leave-message .container .box1 .content {
+.leave-message .container .contact-boxes .content {
   padding-left: 0px;
   text-align: center;
 }
 @media (min-width: 400px) {
-  .leave-message .container .box1 .content {
+  .leave-message .container .contact-boxes .content {
     padding-left: 20px;
   }
 }
-.leave-message .container .box1 .content p {
+.leave-message .container .contact-boxes .content p {
   margin: 0;
 }
-.leave-message .container .box1 .rund-ruta {
+.leave-message .container .contact-boxes .rund-ruta {
   width: 60px;
   height: 60px;
   background-color: #191919;
@@ -1724,17 +1724,16 @@ footer .copyright-content .container .copyright .socialmedia-bar a:hover {
   display: none;
 }
 @media (min-width: 400px) {
-  .leave-message .container .box1 .rund-ruta {
+  .leave-message .container .contact-boxes .rund-ruta {
     display: flex;
   }
 }
-.leave-message .container .box1 .rund-ruta .icon {
+.leave-message .container .contact-boxes .rund-ruta .icon {
   font-size: 30px;
   color: white;
 }
-.leave-message .container .box1:hover {
+.leave-message .container .contact-boxes:hover {
   background-color: #F0EFE9;
-  border: none;
 }
 
 .leave-message-card {

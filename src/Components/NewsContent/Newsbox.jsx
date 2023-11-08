@@ -15,11 +15,26 @@ const Newsbox = () => {
         const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
         const data = await result.json()
         setValue(data)
-        
-        
+      
     }
     
-    
+    const convertDay = (value) => {
+
+        let newResult = new Date(value);
+        const resultDay=  newResult.getDate();
+        console.log(resultDay)
+        return resultDay;
+        
+    }
+    const convertMonth = (value) => {
+
+        const date = new Date(value);
+        const month = date.toLocaleString('default', { month: 'long' });
+        console.log(month)
+        return month;
+        
+    }
+
     return (
         <section className="article-and-news">
             
@@ -49,8 +64,8 @@ const Newsbox = () => {
                                                 <h2>{items.title}</h2>
                                                 <p>{items.content}</p>
                                                 <div className="date">
-                                                    <h4>25</h4>
-                                                    <p className="month">mars</p>
+                                                    <h4>{convertDay(items.published)}</h4>
+                                                    <p className="month">{convertMonth(items.published)}</p>
                                                 </div>
                                             </div>
                                         </div>
