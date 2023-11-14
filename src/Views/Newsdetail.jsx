@@ -8,8 +8,9 @@ const NewsDetails = () => {
     <div className="wrapper">
         
         <main>
-            <LetsContact />
-            <Newsdetailbox/>
+          
+          <LetsContact />
+          <Newsdetailbox/>
             
         </main>
         

@@ -22,10 +22,7 @@ const LeaveMessageCard = () => {
     else
       setErrorStatus(false)
 
-    console.log('name: ' + nameIsValid)
-    console.log('mail: ' + mailIsValid)
-    console.log('message: ' + messageIsValid)
-    console.log('errorStatus: ' + errorStatus)
+    
   })
 
 
@@ -118,19 +115,19 @@ const LeaveMessageCard = () => {
             <form onSubmit={handleSubmit} noValidate className="subcribtion-card">
               <div className='input-group-subscription'>
                 <label>Namn*</label>
-                <input className={formTouched &!nameIsValid ? 'input-content input-error' : 'input-content' } name='name' type="text" value={name} onChange={(e) => handleChange(e)} />
+                <input placeholder='Skriv ditt namn' className={formTouched &!nameIsValid ? 'input-content input-error' : 'input-content' } name='name' type="text" value={name} onChange={(e) => handleChange(e)} />
                 <p className='Error'>{formTouched &!nameIsValid ? 'Du måste skriva ett giltigt namn' : ''}</p>
               </div> 
               
               <div className='input-group-subscription'>
                 <label>Email*</label>
-                <input className={formTouched & !mailIsValid ? 'input-content input-error' : 'input-content'} name='email' type="email" value={email} onChange={(e) => handleChange(e)} />
+                <input placeholder='Skriv din email-adress' className={formTouched & !mailIsValid ? 'input-content input-error' : 'input-content'} name='email' type="email" value={email} onChange={(e) => handleChange(e)} />
                 <p className='Error'>{formTouched &!mailIsValid ? 'Du måste skriva en giltligt email-adress' : ''}</p>
               </div> 
               
               <div className='input-group-subscription'>
                 <label>Your Message*</label>
-                <input className={formTouched &!messageIsValid ? 'input-content input-error' : 'input-content'} name='message' type='message' value={message} onChange={(e) => handleChange(e)}></input>
+                <input placeholder='Skriv ett meddelande' className={formTouched &!messageIsValid ? 'input-content input-error' : 'input-content'} name='message' type='message' value={message} onChange={(e) => handleChange(e)}></input>
                 <p className='Error'>{formTouched &!messageIsValid ? 'Du måste skriva text' : ''}</p>
               </div> 
               

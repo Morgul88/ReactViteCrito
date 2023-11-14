@@ -29,6 +29,14 @@ footer {
   color: #191919;
 }
 
+.Loading-bit {
+  display: flex;
+  height: 50vh;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
 .wrapper-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -123,6 +131,56 @@ footer {
   display: none;
 }
 
+.News-and-article-bar {
+  background-color: #F0EFE9;
+  position: relative;
+}
+.News-and-article-bar .waves-news {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.News-and-article-bar .container {
+  text-align: center;
+}
+.News-and-article-bar .container nav {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.News-and-article-bar .container nav a {
+  display: inline-block;
+  color: #191919;
+  text-decoration: none;
+  margin-right: 35px;
+  position: relative;
+}
+.News-and-article-bar .container nav a.active {
+  font-weight: 500;
+}
+.News-and-article-bar .container nav a.active:after, .News-and-article-bar .container nav a:hover::after {
+  content: "";
+  position: absolute;
+  font-weight: 500;
+  height: 2px;
+  width: 15px;
+  background-color: #191919;
+  left: 50%;
+  bottom: -3px;
+  transform: translate(calc(50% - 15px));
+}
+.News-and-article-bar .container h1 {
+  padding: 0px 0px 40px 0px;
+  color: #191919;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 2rem;
+}
+@media (min-width: 1200px) {
+  .News-and-article-bar .container h1 {
+    font-size: 2.5rem;
+  }
+}
+
 .fixed-header {
   display: flex;
   justify-content: center;
@@ -178,6 +236,7 @@ footer {
 
 header {
   background-color: #F0EFE9;
+  padding-bottom: 15px;
 }
 header .container {
   padding: 16px;
@@ -1400,6 +1459,9 @@ header .container nav a.active:after, header .container nav a:hover::after {
   display: flex;
   gap: 20px;
 }
+.article-and-news .container .flex-content h4 {
+  padding: 10px;
+}
 @media (min-width: 1405px) {
   .article-and-news .container .flex-content {
     display: grid;
@@ -1429,28 +1491,27 @@ header .container nav a.active:after, header .container nav a:hover::after {
   width: 100%;
   height: 300px;
 }
-.article-and-news .container .flex-content .box1 .image {
+.article-and-news .container .flex-content .box1 .image-box {
   position: relative;
 }
-.article-and-news .container .flex-content .box1 .image .date {
+.article-and-news .container .flex-content .box1 .image-box .date {
   text-align: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background-color: #f0d596;
-  padding-top: 4px;
+  padding-top: 5px;
   position: absolute;
   left: 15px;
   top: 15px;
 }
-.article-and-news .container .flex-content .box1 .image .date .month {
+.article-and-news .container .flex-content .box1 .image-box .date .month {
   margin: 0px;
-  padding: 0px;
 }
-.article-and-news .container .flex-content .box1 .image .date h4 {
-  margin: 0;
-  padding: 0;
+.article-and-news .container .flex-content .box1 .image-box .date h4 {
+  padding: 0px;
   font-weight: 700;
+  margin: 0px;
 }
 
 .Subscribe {
@@ -1524,14 +1585,139 @@ header .container nav a.active:after, header .container nav a:hover::after {
 
 .Newsdetail .container {
   padding: 0px;
+  width: 100%;
 }
-.Newsdetail .container .content-right .oneside .descriptions-article {
+.Newsdetail .container .content-main-box {
   display: flex;
-  padding: 0 !important;
 }
-.Newsdetail .container .content-right .Otherside {
-  padding: 0px;
-  margin-top: 440px;
+.Newsdetail .container .content-main-box .oneside {
+  margin: 30px;
+  padding: 30px;
+  width: 70%;
+}
+.Newsdetail .container .content-main-box .oneside .category-boxes {
+  display: flex;
+}
+.Newsdetail .container .content-main-box .oneside .category-boxes .my-link-content {
+  width: 114px;
+  height: 40px;
+  background-color: rgba(25, 25, 25, 0.05);
+  margin-right: 10px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Newsdetail .container .content-main-box .oneside .category-boxes .my-link-content .my-link {
+  text-decoration: none;
+  color: black;
+}
+.Newsdetail .container .content-main-box .oneside .category-boxes .my-link-content:hover {
+  background-color: #8f8d8d;
+}
+.Newsdetail .container .content-main-box .oneside .Headcontent-news {
+  font-weight: 700;
+}
+.Newsdetail .container .content-main-box .oneside .image-newsdetail {
+  width: 100%;
+  height: auto;
+}
+.Newsdetail .container .content-main-box .oneside .text-area {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.Newsdetail .container .content-main-box .oneside .text-area i {
+  padding-right: 20px;
+  font-size: 25px;
+}
+.Newsdetail .container .content-main-box .oneside .text-area .quoted-text {
+  display: flex;
+  font-weight: 700;
+  padding: 40px;
+  font-family: "DM Sans";
+  font-style: italic;
+}
+.Newsdetail .container .content-main-box .oneside .descriptions-article {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.Newsdetail .container .content-main-box .oneside .descriptions-article p {
+  padding-right: 30px;
+  margin: 0;
+}
+.Newsdetail .container .content-main-box .oneside .descriptions-article i {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  color: #C3AB71;
+  padding-right: 10px;
+}
+.Newsdetail .container .content-main-box .Otherside {
+  width: 30%;
+  margin: 230px 30px 30px 30px;
+  padding: 30px;
+  border-radius: 10px;
+  border-color: #dfdfdf;
+}
+.Newsdetail .container .content-main-box .Otherside p {
+  font-size: 14px;
+}
+.Newsdetail .container .content-main-box .Otherside h3 {
+  font-size: 22px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.Newsdetail .container .content-main-box .Otherside h4 {
+  font-size: 16px;
+}
+.Newsdetail .container .content-main-box .Otherside .recent-post {
+  border: 1px solid rgb(218, 218, 218);
+  padding: 30px;
+}
+.Newsdetail .container .content-main-box .Otherside .recent-post p {
+  border-bottom: 1px solid rgb(218, 218, 218);
+  padding-bottom: 5px;
+  color: grey;
+}
+.Newsdetail .container .content-main-box .Otherside .recent-post .last-post {
+  border: none;
+}
+.Newsdetail .container .content-main-box .Otherside .category-post {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid rgb(218, 218, 218);
+}
+.Newsdetail .container .content-main-box .Otherside .category-post .category-objects {
+  display: flex;
+}
+.Newsdetail .container .content-main-box .Otherside .search-area-box {
+  position: relative;
+}
+.Newsdetail .container .content-main-box .Otherside .search-area-box .input-content-search {
+  padding: 10px;
+  background-color: rgb(236, 236, 236);
+  border: 1px solid white;
+  color: #191919;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 30px;
+}
+.Newsdetail .container .content-main-box .Otherside .search-area-box .input-content-search::-moz-placeholder {
+  padding-left: 30px;
+}
+.Newsdetail .container .content-main-box .Otherside .search-area-box .input-content-search::placeholder {
+  padding-left: 30px;
+}
+.Newsdetail .container .content-main-box .Otherside .search-area-box i {
+  position: absolute;
+  top: 20px;
+  left: 30px;
 }
 
 footer .footer-content {
@@ -1738,13 +1924,17 @@ footer .copyright-content .container .copyright .socialmedia-bar a:hover {
 
 .leave-message-card {
   padding-bottom: 60px;
+  margin-bottom: 50px;
 }
 .leave-message-card .container {
   background-color: #F0EFE9;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
 }
 .leave-message-card .container h1 {
+  padding-top: 100px;
+  text-align: center;
   padding-bottom: 30px;
   font-weight: 700;
   font-size: 2rem;
@@ -1811,7 +2001,8 @@ footer .copyright-content .container .copyright .socialmedia-bar a:hover {
 
 .map .map-image {
   background-color: #cccccc;
-  height: 400px;
-  background-position: center;
   background-size: cover;
+}
+.map .map-image img {
+  width: 100%;
 }

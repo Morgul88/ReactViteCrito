@@ -10,7 +10,7 @@ import MenuMobile from './menumobile'
 const Header = () => {
 
     const [showmenu, setShowmenu] = useState(false)
-    console.log(showmenu)
+    const [changeMode, setChangeMode] = useState(false)
 
   return (
     
@@ -37,6 +37,7 @@ const Header = () => {
                         <i className="fa-sharp fa-light fa-location-dot"></i>
                         Sveavägen 31,111 34 STOCKKHOLM
                     </div>
+                    
                 </div>
                 <div className="socialmedia-bar">
                     

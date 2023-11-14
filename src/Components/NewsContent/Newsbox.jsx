@@ -1,26 +1,17 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useArticles } from '../../Context/ArticleContext';
 
 const Newsbox = () => {
-    const [value, setValue] = useState([]);
-    
-    useEffect(() => {
-        
-        ChangePost()
-    },[])
 
-    const ChangePost = async () => {
-        
-        const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles')
-        const data = await result.json()
-        setValue(data)
-      
-    }
+    const { articles } = useArticles()
+    
     
     const convertDay = (value) => {
 
         let newResult = new Date(value);
+        console.log(newResult)
         const resultDay=  newResult.getDate();
         console.log(resultDay)
         return resultDay;
@@ -30,67 +21,66 @@ const Newsbox = () => {
 
         const date = new Date(value);
         const month = date.toLocaleString('default', { month: 'long' });
-        console.log(month)
+        
         return month;
         
     }
-
+    
     return (
-        <section className="article-and-news">
-            
-            <div className="container">
+        articles.length > 0 ?
+                ( <section className="article-and-news">
+                            
+                <div className="container">
 
-                <div className="content-group">
-                    <div className="head">
-                        <p>Article & News</p>
+                    <div className="content-group">
+                        <div className="head">
+                            <p>Article & News</p>
+                        </div>
+                        <div className="content-buttom">
+                            <h2>Get Every Single Article & News</h2>
+                            <a className="btn-yellow" target="_blank" href="Browse-team.html">Browse Team <i className="fa-regular fa-arrow-up-right"></i></a>
+                        </div>
                     </div>
-                    <div className="content-buttom">
-                        <h2>Get Every Single Article & News</h2>
-                        <a className="btn-yellow" target="_blank" href="Browse-team.html">Browse Team <i className="fa-regular fa-arrow-up-right"></i></a>
+
+                    <div className="flex-content">
+                        
+                        {articles.map((item,index) => (
+                            <NavLink to={`/Newsdetailbox/${item.id}`} className="no-underline" key={index}>
+                            <div className="box1">
+                                <div className="image-box">
+                                    <img className="pictures" src={item.imageUrl} alt="Women sitting on a chair next to a table" />
+                                    <p>{item.category}</p>
+                                    <h2>{item.title}</h2>
+                                    <p>{item.content}</p>
+                                    <div className="date">
+                                        <h4>{convertDay(item.published)}</h4>
+                                        <p className="month">{convertMonth(item.published)}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </NavLink>
+                        ))}
+                        
+
                     </div>
-                </div>
-
-                <div className="flex-content">
-                    
-                    {value.map((items,index) => {
-                        {
-                            return (
-                                
-                                    <NavLink to={`/Newsdetailbox/${items.id}`} className="no-underline" key={index}>
-                                        <div className="box1">
-                                            <div className="image">
-                                                <img className="pictures" src={items.imageUrl} alt="Women sitting on a chair next to a table" />
-                                                <p>{items.category}</p>
-                                                <h2>{items.title}</h2>
-                                                <p>{items.content}</p>
-                                                <div className="date">
-                                                    <h4>{convertDay(items.published)}</h4>
-                                                    <p className="month">{convertMonth(items.published)}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </NavLink>
-                                
-                            );
-                        }
-                        // return null; // Om id inte finns i listan, returnera inget
-                    })}
-                    
+                    <div className="dots more">
+                        <Link to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
+                        <Link  to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
+                        <Link  to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
+                        <Link  to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
+                        <Link  to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
+                    </div>
 
                 </div>
-                <div className="dots more">
-                    <Link to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
-                    <Link  to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
-                    <Link  to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
-                    <Link  to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
-                    <Link  to="#"><i className="fa-solid fa-circle fa-xs"></i></Link >
-                </div>
 
-            </div>
+            </section>)
+            :
+            (<div className='Loading-bit'><h1>Loading</h1></div>)
 
-        </section>
         
-    );
+           
+    )  
+        
 }
 
 export default Newsbox
