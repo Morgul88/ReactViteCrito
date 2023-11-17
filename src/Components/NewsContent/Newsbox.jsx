@@ -75,7 +75,7 @@ const Newsbox = () => {
 
             </section>)
             :
-            (<div className='Loading-bit'><h1>Loading</h1></div>)
+            (<div className='Loading-bit'><h1>Loading...</h1></div>)
 
         
            

@@ -1,6 +1,7 @@
 import React from 'react'
 import img_element from '../../assets/images/EWlement (2).svg'
 import img_third from '../../assets/images/Image (13).svg'
+import { Link } from 'react-router-dom'
 
 const AboutCompany = () => {
   return (
@@ -32,10 +33,10 @@ const AboutCompany = () => {
                     <a className="btn-yellow learn-more" target="_blank" href="learnmore.html">Learn more <i className="fa-regular fa-arrow-up-right"></i></a>
                 </div>
                 <div className="play-knapp">
-                    <a className="liten-lada" target="_blank" href="#">
+                    <Link className="liten-lada" target="_blank" href="#">
                         <i className="fa-solid fa-play knapp no-anim"></i>
                         <i className="fa-solid fa-play fa-beat fa-lg anim"></i>
-                    </a>
+                    </Link>
                     <p className="text">Video Intro</p>
                 </div>
             </div>
